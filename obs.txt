@@ -13,3 +13,8 @@ copie e cole a pasta rviz_cfg no dir:
 copie e cole drone_main.launch no dir
 	hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_gazebo/launch
 
+Run:
+catkin_make
+source devel/setup.bash
+roslaunch hector_quadrotor_gazebo drone_main.launch
+rosrun flymode fly.py
