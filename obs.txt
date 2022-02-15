@@ -1,5 +1,7 @@
 git clone no seu ambiente ROS:
 	https://github.com/RAFALAMAO/hector_quadrotor_noetic.git
+	
+copie e cole a pasta flymode no src.
 
 copie e cole basic.launch no dir: 
 	hector_quadrotor_noetic/hector_gazebo/hector_gazebo_worlds/launch
