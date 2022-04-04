@@ -56,11 +56,11 @@ if __name__ == '__main__':
     drone = Fly()
     rospy.Subscriber('/scan', LaserScan, callback) #We subscribe to the laser's topic
     altitude = 5
-    metros = 4
+    metros = 3
 
     drone.up(altitude)
     drone.moveInline(metros)
-    # for i in range(1,5):
-    #     drone.moveInline(metros)
-    #     drone.turn()
+    for i in range(1,5):
+        drone.moveInline(metros)
+        drone.turn()
 
