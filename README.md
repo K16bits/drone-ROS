@@ -26,3 +26,7 @@ roslaunch hector_quadrotor_gazebo testeMain.launch
 ```
 rosrun flymode fly3.py
 ```
+
+![alt map](https://github.com/K16bits/drone-ROS/blob/master/screenshot/mapa.png)
+![alt mapaAntes](https://github.com/K16bits/drone-ROS/blob/master/screenshot/antesMapa.png)
+![alt mapaDepois](https://github.com/K16bits/drone-ROS/blob/master/screenshot/depoisMapa.png)
