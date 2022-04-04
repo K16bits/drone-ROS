@@ -7,7 +7,7 @@ Clone este repositorio <br/>
 ```
 git clone https://github.com/K16bits/drone-ROS.git
 ```
-Execute o .sh
+Execute dentro da pasta drone-ROS o .sh
 ```
 ./init.sh
 ```
