@@ -145,37 +145,39 @@ def fly():
     pub_thread.update(x, y, 0, th, speed, turn)
 
 def move():
-    largura = 12
-    comprimento = 17.5
-    # time.sleep(17) # tempo correto
-    # time.sleep(11) # tempo correto
+    largura = 13
+    comprimento = 17.9
+    tempo90Graus = 1.84
     print('--------- move -----------')
 
     for i in range(1,3):
         # RETO
+        print("direto")
         pub_thread.update(x, 1, 0, th, speed, turn)
         time.sleep(largura) # tempo correto
         pub_thread.update(x, 0, 0, 0, speed, turn)
-        time.sleep(1)
+        time.sleep(1)         
 
         # Giro 
+        print("Giro~90")
         pub_thread.update(x, 0, 0, -1, speed, turn)
-        time.sleep(1.8)
+        time.sleep(tempo90Graus)
         pub_thread.update(x, 0, 0, 0, speed, turn)
+        time.sleep(1)
 
-        # RETO
+        print("direto")
         pub_thread.update(x, 1, 0, th, speed, turn)
         time.sleep(comprimento) # tempo correto
         pub_thread.update(x, 0, 0, 0, speed, turn)
+        time.sleep(1) 
+
+        print("Giro~90")
+        pub_thread.update(x, 0, 0, -1, speed, turn)
+        time.sleep(tempo90Graus)
+        pub_thread.update(x, 0, 0, 0, speed, turn)
         time.sleep(1)
 
-        # Giro 
-        pub_thread.update(x, 0, 0, -1, speed, turn)
-        time.sleep(1.8)
-        pub_thread.update(x, 0, 0, 0, speed, turn)
-    #end
     pub_thread.update(x, 0, 0, 0, speed, turn)
-
 
 if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
@@ -200,35 +202,11 @@ if __name__=="__main__":
     try:
         pub_thread.wait_for_subscribers()
         pub_thread.update(x, y, z, th, speed, turn)
-        print(msg)
         print(vels(speed,turn))
         fly()
         move()
-        while(1):
-            key = getKey(key_timeout)
-            if key in moveBindings.keys():
-                x = moveBindings[key][0]
-                y = moveBindings[key][1]
-                z = moveBindings[key][2]
-                th = moveBindings[key][3]
-            else:
-                # Skip updating cmd_vel if key timeout and robot already
-                # stopped.
-                if key == '' and x == 0 and y == 0 and z == 0 and th == 0:
-                    continue
-                x = 0
-                y = 0
-                z = 0
-                th = 0
-                if (key == '\x03'):
-                    break
-
-            pub_thread.update(x, y, z, th, speed, turn)
-
     except Exception as e:
         print(e)
-
     finally:
         pub_thread.stop()
-
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
