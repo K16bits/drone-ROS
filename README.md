@@ -1,5 +1,5 @@
 # drone-ROS
-Ambiente ROS
+Ambiente [ROS Noetic Ninjemys](http://wiki.ros.org/noetic)
 ```
 cd ~/catkin_ws/src
 ```
