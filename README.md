@@ -18,11 +18,18 @@ No diretorio: "~/catkin_ws" execute:
 source devel/setup.bash
 catkin_make
 ```
-# Execução
+## Execução
 ```
 roslaunch hector_quadrotor_demo projeto.launch
 ```
-# Voo 
+## Voo 
 ```
 rosrun flymode main.py
+```
+
+## Modelos de Visão computacionais 
+```
+1 - roslaunch vision imshow.launch
+2 - roslaunch vision imshowIPCam.launch
+3 - roslaunch vision imshow2model.launch 
 ```
