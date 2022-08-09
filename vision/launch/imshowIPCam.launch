@@ -1,0 +1,3 @@
+<launch>
+<node name="webcam" pkg="vision" type="camcv_detectionIPcam.py" output="screen" respawn="true"/>
+</launch>

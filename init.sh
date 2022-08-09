@@ -2,7 +2,7 @@
 cd ..
 BASEDIR="${PWD}"
 echo '###############################################'
-echo '# Copiando as configurações para o ROS        #'
+echo '| Copiando as configurações para o ROS        |'
 echo '\n'
 git clone https://github.com/RAFALAMAO/hector-quadrotor-noetic.git
 sleep 1
@@ -22,6 +22,9 @@ cp $BASEDIR/drone-ROS/musthave/rviz_cfg/* $BASEDIR/$CONFIG_RVIZ
 
 # Configurações do Projeto launch
 cp $BASEDIR/drone-ROS/musthave/projeto.launch $BASEDIR/$DIR_HECTOR_MAIN
+cp $BASEDIR/drone-ROS/musthave/projetoCam.launch $BASEDIR/$DIR_HECTOR_MAIN
 
 mv $BASEDIR/drone-ROS/flymode/ ./
+mv $BASEDIR/drone-ROS/vision/ ./
+
 echo '################### FIM ###########################'
