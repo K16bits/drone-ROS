@@ -28,8 +28,8 @@ rosrun flymode main.py
 ```
 
 ## Modelos de Visão computacionais 
-```
-1 - roslaunch vision imshow.launch
-2 - roslaunch vision imshowIPCam.launch
-3 - roslaunch vision imshow2model.launch 
-```
+
+1 - roslaunch vision imshow.launch <br/>
+2 - roslaunch vision imshowIPCam.launch <br/> (Utilizar o aplicativo IP Webcam e inserir o IP infomado no codigo) 
+3 - roslaunch vision imshow2model.launch <br/>
+
